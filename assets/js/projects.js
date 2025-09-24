@@ -133,6 +133,7 @@ class ProjectShowcase {
 
         this.filteredProjects = [...this.projects];
         this.renderProjects();
+        this.loadPrivateProjects();
     }
 
     setupFilters() {
@@ -451,6 +452,189 @@ class ProjectShowcase {
             }
         });
     }
+
+    loadPrivateProjects() {
+        this.privateProjects = [
+            {
+                id: 1,
+                title: "10YearAnniversarySite",
+                description: "Comprehensive interactive website celebrating a 10-year marriage anniversary with advanced photo management, timeline milestones, and powerful search capabilities. Features 650+ optimized photos, smart filtering, and mobile-optimized navigation.",
+                category: "web",
+                technologies: ["JavaScript", "Canvas API", "Photo Management", "Timeline UI", "Mobile Optimization"],
+                features: [
+                    "650+ Photos with lazy loading & Canvas thumbnails",
+                    "Advanced Search by date, location, caption, filename",
+                    "Interactive Timeline with chronological life events",
+                    "Smart filters for holidays, seasons, and date ranges",
+                    "Full-size slideshow with keyboard navigation",
+                    "Mobile-optimized touch controls"
+                ],
+                isPrivate: true
+            },
+            {
+                id: 2,
+                title: "ScoreKeeper",
+                description: "Self-hosted replacement for KeepTheScore.com - real-time scoreboards perfect for livestreaming and game management. Complete with user authentication, collaboration features, and professional OBS integration.",
+                category: "web",
+                technologies: ["Node.js", "JWT Auth", "WebSocket", "Real-time Sync", "OBS Integration"],
+                features: [
+                    "JWT-based authentication & user management",
+                    "Real-time score synchronization across devices",
+                    "Professional layouts optimized for streaming",
+                    "Team customization with logos and colors",
+                    "Advanced timer with period management",
+                    "OBS browser source integration"
+                ],
+                isPrivate: true
+            },
+            {
+                id: 3,
+                title: "ToothPaste",
+                description: "Universal cross-platform collaboration platform that makes files, clipboard, mouse, and keyboard flow between devices seamlessly. Zero-configuration with automatic discovery, local-first architecture, and enterprise features.",
+                category: "tools",
+                technologies: ["Python", "WebRTC", "Bluetooth", "P2P Networking", "Enterprise Security"],
+                features: [
+                    "Software KVM - mouse/keyboard flow between devices",
+                    "Universal clipboard with format preservation",
+                    "Cross-machine drag & drop functionality",
+                    "Automatic device discovery via BLE/mDNS",
+                    "Enterprise authentication & policy engine",
+                    "End-to-end encryption with forward secrecy"
+                ],
+                isPrivate: true
+            }
+        ];
+
+        this.renderPrivateProjects();
+    }
+
+    renderPrivateProjects() {
+        const privateGrid = document.querySelector('.private-projects-grid');
+        if (!privateGrid) return;
+
+        privateGrid.innerHTML = '';
+
+        this.privateProjects.forEach((project, index) => {
+            const projectCard = this.createPrivateProjectCard(project);
+            privateGrid.appendChild(projectCard);
+
+            setTimeout(() => {
+                projectCard.style.opacity = '1';
+                projectCard.style.transform = 'translateY(0)';
+            }, index * 150);
+        });
+    }
+
+    createPrivateProjectCard(project) {
+        const card = document.createElement('article');
+        card.className = 'private-project-card';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+
+        card.innerHTML = `
+            <div class="private-card-header">
+                <div class="private-badge">🔒 Private Repository</div>
+                <h4 class="private-project-title">${project.title}</h4>
+            </div>
+            <div class="private-project-content">
+                <p class="private-project-description">${project.description}</p>
+                <div class="private-project-tech">
+                    ${project.technologies.map(tech =>
+                        `<span class="tech-tag private-tech">${tech}</span>`
+                    ).join('')}
+                </div>
+                <div class="private-features">
+                    <h5>Key Features:</h5>
+                    <ul class="features-list">
+                        ${project.features.map(feature =>
+                            `<li class="feature-item">${feature}</li>`
+                        ).join('')}
+                    </ul>
+                </div>
+                <div class="private-actions">
+                    <button class="btn btn-private" onclick="projectShowcase.requestCollaboratorAccess('${project.title}')">
+                        <span class="request-icon">🤝</span>
+                        Request Collaborator Access
+                    </button>
+                    <div class="private-note">
+                        <small>Interested in seeing the code? Send a collaboration request!</small>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        return card;
+    }
+
+    requestCollaboratorAccess(projectTitle) {
+        // Create modal for collaboration request
+        const modal = document.createElement('div');
+        modal.className = 'collaboration-modal';
+        modal.innerHTML = `
+            <div class="collaboration-modal-content">
+                <div class="modal-header">
+                    <h3>Request Collaborator Access</h3>
+                    <button class="modal-close" onclick="this.closest('.collaboration-modal').remove()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="collaboration-info">
+                        <div class="project-info">
+                            <h4>${projectTitle}</h4>
+                            <p>This is a private repository. To request collaborator access, please reach out through one of the contact methods below:</p>
+                        </div>
+                        <div class="contact-options">
+                            <a href="mailto:chris@titaniumshovel.com?subject=Collaborator Request: ${projectTitle}&body=Hi Chris,%0A%0AI'm interested in collaborating on ${projectTitle}. Here's a bit about my background:%0A%0A[Please tell me about yourself and why you're interested in this project]%0A%0AThanks!" class="contact-option">
+                                <span class="contact-icon">📧</span>
+                                <div class="contact-details">
+                                    <strong>Email Request</strong>
+                                    <small>Pre-filled collaboration email</small>
+                                </div>
+                            </a>
+                            <a href="https://linkedin.com/in/chrismackle" target="_blank" class="contact-option">
+                                <span class="contact-icon">💼</span>
+                                <div class="contact-details">
+                                    <strong>LinkedIn Message</strong>
+                                    <small>Connect and send a message</small>
+                                </div>
+                            </a>
+                            <a href="https://github.com/titaniumshovel" target="_blank" class="contact-option">
+                                <span class="contact-icon">⚡</span>
+                                <div class="contact-details">
+                                    <strong>GitHub Discussion</strong>
+                                    <small>Open an issue or discussion</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="request-note">
+                            <p><strong>What to include in your request:</strong></p>
+                            <ul>
+                                <li>Your background and experience</li>
+                                <li>Why you're interested in this project</li>
+                                <li>How you'd like to contribute</li>
+                                <li>Your GitHub username</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        setTimeout(() => {
+            modal.classList.add('active');
+        }, 10);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.remove();
+            }
+        });
+
+        // Track the request
+        console.log(`Collaboration request initiated for: ${projectTitle}`);
+    }
 }
 
 const MODAL_STYLES = `
@@ -708,6 +892,327 @@ const MODAL_STYLES = `
 
     .tech-list {
         justify-content: center;
+    }
+}
+
+/* Private Projects Styles */
+.private-projects-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid var(--titanium-silver);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+}
+
+.private-section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.private-section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.private-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.private-project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 0;
+    box-shadow: var(--shadow-soft);
+    border: 2px solid var(--titanium-silver);
+    overflow: hidden;
+    transition: all var(--transition-medium);
+    position: relative;
+}
+
+.private-project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+    border-color: var(--secondary-color);
+}
+
+.private-card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.private-badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.private-project-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    font-family: var(--font-mono);
+}
+
+.private-project-content {
+    padding: 1.5rem;
+}
+
+.private-project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.private-project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.private-tech {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    font-weight: 600;
+}
+
+.private-features {
+    margin-bottom: 2rem;
+}
+
+.private-features h5 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-item {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.feature-item::before {
+    content: '✨';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+}
+
+.private-actions {
+    text-align: center;
+}
+
+.btn-private {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn-private:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, #c0392b, #e67e22);
+}
+
+.request-icon {
+    font-size: 1.2rem;
+}
+
+.private-note {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Collaboration Modal Styles */
+.collaboration-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.collaboration-modal.active {
+    opacity: 1;
+}
+
+.collaboration-modal-content {
+    background: white;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow-y: auto;
+    box-shadow: var(--shadow-heavy);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.collaboration-modal.active .collaboration-modal-content {
+    transform: scale(1);
+}
+
+.collaboration-info {
+    padding: 2rem;
+}
+
+.project-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.project-info h4 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-mono);
+}
+
+.contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all var(--transition-medium);
+    border: 2px solid transparent;
+}
+
+.contact-option:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateX(5px);
+    border-color: var(--secondary-color);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    min-width: 30px;
+}
+
+.contact-details strong {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.contact-details small {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.contact-option:hover .contact-details small {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.request-note {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--accent-color);
+}
+
+.request-note p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.request-note ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.request-note li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .private-projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .private-projects-section {
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+
+    .private-section-title {
+        font-size: 1.8rem;
+    }
+
+    .collaboration-modal-content {
+        width: 95%;
+    }
+
+    .collaboration-info {
+        padding: 1.5rem;
+    }
+
+    .contact-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .contact-details {
+        text-align: center;
     }
 }
 `;
