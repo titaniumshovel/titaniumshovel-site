@@ -571,7 +571,7 @@ class ProjectShowcase {
                                     <small>Pre-filled collaboration email</small>
                                 </div>
                             </a>
-                            <a href="https://linkedin.com/in/chrismackle" target="_blank" class="contact-option">
+                            <a href="https://www.linkedin.com/in/mackle/" target="_blank" class="contact-option">
                                 <span class="contact-icon">💼</span>
                                 <div class="contact-details">
                                     <strong>LinkedIn Message</strong>
