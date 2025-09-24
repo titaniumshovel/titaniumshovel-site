@@ -92,6 +92,32 @@
         gap: 2rem;
     }
 
+    .bio-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .headshot {
+        width: 100px;
+        height: 100px;
+    }
+
+    .experience-timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
+    }
+
+    .timeline-marker {
+        left: -38px;
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+    }
+
     .about-visual {
         order: -1;
     }
@@ -183,7 +209,25 @@
         padding: 1.5rem;
     }
 
-    .bio-placeholder {
+    .professional-bio {
+        padding: 1.5rem;
+    }
+
+    .bio-content p {
+        font-size: 1rem;
+    }
+
+    .company-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .job-skills {
+        justify-content: center;
+    }
+
+    .timeline-content {
         padding: 1.5rem;
     }
 
