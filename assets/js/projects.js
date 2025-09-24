@@ -47,20 +47,6 @@ class ProjectShowcase {
             },
             {
                 id: 3,
-                title: "Vision One MCP Server",
-                description: "Model Context Protocol server enabling natural language interaction with Trend Vision One security APIs. Leverages LLMs for intelligent security event analysis and response automation.",
-                category: "ai",
-                technologies: ["Python", "MCP Protocol", "Trend Vision One API", "LLM Integration"],
-                image: null,
-                links: {
-                    demo: "https://github.com/titaniumshovel/vision-one-mcp-server#examples",
-                    github: "https://github.com/titaniumshovel/vision-one-mcp-server"
-                },
-                featured: true,
-                status: "completed"
-            },
-            {
-                id: 4,
                 title: "Whisper Obsidian Plugin",
                 description: "Speech-to-text plugin for Obsidian that integrates OpenAI's Whisper API for real-time audio transcription directly within your knowledge management workflow.",
                 category: "tools",
@@ -74,7 +60,7 @@ class ProjectShowcase {
                 status: "completed"
             },
             {
-                id: 5,
+                id: 4,
                 title: "Media Transcriber",
                 description: "Python-based media transcription toolkit for batch processing audio and video files. Supports multiple formats and provides automated transcription workflows for content creators.",
                 category: "tools",
@@ -88,7 +74,7 @@ class ProjectShowcase {
                 status: "completed"
             },
             {
-                id: 6,
+                id: 5,
                 title: "MarkdownToPDF Converter",
                 description: "JavaScript tool for converting Markdown documents to professional PDF format with customizable styling, table of contents generation, and batch processing capabilities.",
                 category: "tools",
@@ -102,7 +88,7 @@ class ProjectShowcase {
                 status: "completed"
             },
             {
-                id: 7,
+                id: 6,
                 title: "V1 Credit Breakdown",
                 description: "Python analytics tool for analyzing Trend Vision One credit usage patterns. Provides detailed insights into API consumption, cost optimization recommendations, and usage forecasting.",
                 category: "tools",
@@ -115,25 +101,15 @@ class ProjectShowcase {
                 featured: false,
                 status: "completed"
             },
-            {
-                id: 8,
-                title: "TitaniumShovel Portfolio",
-                description: "This very website! A modern, interactive developer portfolio featuring custom titanium shovel branding, scroll-triggered animations, and responsive design. Built with pure HTML, CSS, and JavaScript.",
-                category: "web",
-                technologies: ["JavaScript", "CSS3", "HTML5", "Animations", "GitHub Pages"],
-                image: null,
-                links: {
-                    demo: "https://titaniumshovel.com",
-                    github: "https://github.com/titaniumshovel/titaniumshovel-site"
-                },
-                featured: true,
-                status: "completed"
-            }
         ];
 
         this.filteredProjects = [...this.projects];
         this.renderProjects();
-        this.loadPrivateProjects();
+
+        // Delay private projects loading to ensure DOM is ready
+        setTimeout(() => {
+            this.loadPrivateProjects();
+        }, 100);
     }
 
     setupFilters() {
@@ -510,8 +486,12 @@ class ProjectShowcase {
 
     renderPrivateProjects() {
         const privateGrid = document.querySelector('.private-projects-grid');
-        if (!privateGrid) return;
+        if (!privateGrid) {
+            console.error('Private projects grid not found!');
+            return;
+        }
 
+        console.log('Rendering private projects...', this.privateProjects);
         privateGrid.innerHTML = '';
 
         this.privateProjects.forEach((project, index) => {
@@ -1224,6 +1204,21 @@ document.head.appendChild(modalStyleSheet);
 let projectShowcase;
 document.addEventListener('DOMContentLoaded', () => {
     projectShowcase = new ProjectShowcase();
+    window.projectShowcase = projectShowcase;
 });
 
-window.projectShowcase = projectShowcase;
+// Fallback initialization if DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!projectShowcase) {
+            projectShowcase = new ProjectShowcase();
+            window.projectShowcase = projectShowcase;
+        }
+    });
+} else {
+    // DOM is already ready
+    if (!projectShowcase) {
+        projectShowcase = new ProjectShowcase();
+        window.projectShowcase = projectShowcase;
+    }
+}
