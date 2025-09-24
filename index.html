@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chris Mackle - Software Developer & Computer Science Professional. Explore my projects and journey in tech.">
+    <meta name="keywords" content="Chris Mackle, Software Developer, Computer Science, Portfolio, Web Development">
+    <meta name="author" content="Chris Mackle">
+
+    <title>Chris Mackle | TitaniumShovel</title>
+
+    <link rel="icon" type="image/png" href="assets/images/titaniumshovel.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <div id="custom-cursor"></div>
+    <div id="cursor-trail"></div>
+
+    <nav class="nav-container" role="navigation" aria-label="Main navigation">
+        <div class="nav-brand">
+            <img src="assets/images/titaniumshovel.png" alt="TitaniumShovel Logo" class="nav-logo">
+            <span class="nav-text">TitaniumShovel</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main role="main">
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-name">Chris Mackle</span>
+                        <span class="hero-subtitle">Software Developer</span>
+                    </h1>
+                    <p class="hero-description">
+                        Digging deep into code, building solutions that matter.
+                        <br>Computer Science background meets creative problem-solving.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="shovel-container">
+                        <img src="assets/images/titaniumshovel.png" alt="Titanium Shovel" class="hero-shovel">
+                        <div class="dig-particles"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll to dig deeper</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-subtitle">The story behind the shovel</div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <div class="bio-placeholder">
+                            <h3>Your Bio Goes Here</h3>
+                            <p>This is where you can tell your story. Replace this placeholder with your personal journey, background in computer science, what drives you as a developer, and what makes you unique in the tech world.</p>
+                            <p>Consider including:</p>
+                            <ul>
+                                <li>Your path into computer science and development</li>
+                                <li>What technologies excite you most</li>
+                                <li>Your approach to problem-solving</li>
+                                <li>What you're passionate about building</li>
+                                <li>Fun facts that make you memorable</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="about-card">
+                            <h4>Computer Science Background</h4>
+                            <p>Solid foundation in algorithms, data structures, and software engineering principles.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>Problem Solver</h4>
+                            <p>I dig deep into complex challenges to unearth elegant solutions.</p>
+                        </div>
+                        <div class="about-card">
+                            <h4>Continuous Learner</h4>
+                            <p>Always exploring new technologies and best practices in development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Projects</h2>
+                    <div class="section-subtitle">What I've been digging into</div>
+                </div>
+
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="tools">Tools & Utilities</button>
+                    <button class="filter-btn" data-filter="ai">AI/ML</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Name 1</h3>
+                            <p class="project-description">Brief description of your project. What problem does it solve? What technologies did you use?</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="tools">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Name 2</h3>
+                            <p class="project-description">Another project description. Highlight the impact and technical challenges you overcame.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="web">
+                        <div class="project-image">
+                            <div class="project-placeholder">Project Image</div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Project Name 3</h3>
+                            <p class="project-description">Third project showcasing different skills and technologies.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Express</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Live Demo</a>
+                                <a href="#" class="project-link">GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Skills Garden</h2>
+                    <div class="section-subtitle">Technologies I've cultivated</div>
+                </div>
+
+                <div class="skills-garden">
+                    <div class="skill-plot">
+                        <h4>Languages</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">JavaScript</div>
+                            <div class="skill-item">Python</div>
+                            <div class="skill-item">Java</div>
+                            <div class="skill-item">C++</div>
+                            <div class="skill-item">TypeScript</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-plot">
+                        <h4>Frontend</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">React</div>
+                            <div class="skill-item">Vue.js</div>
+                            <div class="skill-item">HTML/CSS</div>
+                            <div class="skill-item">Sass</div>
+                            <div class="skill-item">Webpack</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-plot">
+                        <h4>Backend</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">Node.js</div>
+                            <div class="skill-item">Express</div>
+                            <div class="skill-item">Django</div>
+                            <div class="skill-item">REST APIs</div>
+                            <div class="skill-item">GraphQL</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-plot">
+                        <h4>Tools & Cloud</h4>
+                        <div class="skill-items">
+                            <div class="skill-item">Git</div>
+                            <div class="skill-item">Docker</div>
+                            <div class="skill-item">AWS</div>
+                            <div class="skill-item">MongoDB</div>
+                            <div class="skill-item">PostgreSQL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <div class="section-subtitle">Let's dig into something amazing together</div>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Ready to collaborate?</h3>
+                        <p>Whether you have a project in mind, want to discuss opportunities, or just want to connect with a fellow developer, I'd love to hear from you.</p>
+
+                        <div class="contact-methods">
+                            <a href="mailto:chris@titaniumshovel.com" class="contact-method">
+                                <span class="contact-icon">📧</span>
+                                <span>chris@titaniumshovel.com</span>
+                            </a>
+                            <a href="https://linkedin.com/in/chrismackle" class="contact-method">
+                                <span class="contact-icon">💼</span>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="https://github.com/chrismackle" class="contact-method">
+                                <span class="contact-icon">⚡</span>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/images/titaniumshovel.png" alt="TitaniumShovel Logo" class="footer-logo">
+                    <span>TitaniumShovel.com</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2025 Chris Mackle. Built with passion and caffeine.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/projects.js"></script>
+</body>
+</html>

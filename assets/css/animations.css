@@ -1,0 +1,461 @@
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+@keyframes wiggle {
+    0%, 7% {
+        transform: rotateZ(0);
+    }
+    15% {
+        transform: rotateZ(-15deg);
+    }
+    20% {
+        transform: rotateZ(10deg);
+    }
+    25% {
+        transform: rotateZ(-10deg);
+    }
+    30% {
+        transform: rotateZ(6deg);
+    }
+    35% {
+        transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+        transform: rotateZ(0);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--secondary-color), 0 0 10px var(--secondary-color), 0 0 15px var(--secondary-color);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color), 0 0 30px var(--secondary-color);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes dig {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(10px) rotate(15deg);
+    }
+    50% {
+        transform: translateY(20px) rotate(30deg);
+    }
+    75% {
+        transform: translateY(10px) rotate(15deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-on-scroll.from-left {
+    transform: translateX(-30px);
+}
+
+.animate-on-scroll.from-left.animate {
+    transform: translateX(0);
+}
+
+.animate-on-scroll.from-right {
+    transform: translateX(30px);
+}
+
+.animate-on-scroll.from-right.animate {
+    transform: translateX(0);
+}
+
+.animate-on-scroll.scale {
+    transform: scale(0.8);
+}
+
+.animate-on-scroll.scale.animate {
+    transform: scale(1);
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+.floating.delay-1 {
+    animation-delay: 0.5s;
+}
+
+.floating.delay-2 {
+    animation-delay: 1s;
+}
+
+.floating.delay-3 {
+    animation-delay: 1.5s;
+}
+
+.hover-grow {
+    transition: transform 0.3s ease;
+}
+
+.hover-grow:hover {
+    transform: scale(1.05);
+}
+
+.hover-wiggle {
+    transition: transform 0.3s ease;
+}
+
+.hover-wiggle:hover {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    animation: glow 1s ease-in-out infinite;
+}
+
+.text-reveal {
+    overflow: hidden;
+    position: relative;
+}
+
+.text-reveal::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    animation: typewriter 2s steps(40) 1s both;
+}
+
+.cursor-hover-effect {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cursor-hover-effect::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid var(--secondary-color);
+    border-radius: inherit;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.cursor-hover-effect:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.staggered-animation > * {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.staggered-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.staggered-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.staggered-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.staggered-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.staggered-animation > *:nth-child(5) { animation-delay: 0.5s; }
+.staggered-animation > *:nth-child(6) { animation-delay: 0.6s; }
+
+.parallax-element {
+    transition: transform 0.1s ease-out;
+}
+
+.skill-item.animate-in {
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+.project-card.animate-in {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.about-card.animate-in {
+    animation: fadeInRight 0.6s ease forwards;
+}
+
+.contact-method.animate-in {
+    animation: fadeInLeft 0.5s ease forwards;
+}
+
+.dig-animation {
+    animation: dig 2s ease-in-out infinite;
+}
+
+.sparkle-effect {
+    position: relative;
+    overflow: visible;
+}
+
+.sparkle-effect::before,
+.sparkle-effect::after {
+    content: '✨';
+    position: absolute;
+    font-size: 0.8rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sparkle-effect::before {
+    top: -10px;
+    left: -10px;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-effect::after {
+    bottom: -10px;
+    right: -10px;
+    animation: sparkle 2s ease-in-out infinite 1s;
+}
+
+.nav-brand.easter-egg {
+    animation: wiggle 0.5s ease-in-out;
+}
+
+.hero-shovel.digging {
+    animation: dig 1s ease-in-out;
+}
+
+.loading-dots::after {
+    content: '';
+    animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+    100% { content: ''; }
+}
+
+.slide-up {
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+
+.slide-up.active {
+    transform: translateY(0);
+}
+
+.fade-in-delay {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in-delay:nth-child(1) { animation-delay: 0.1s; }
+.fade-in-delay:nth-child(2) { animation-delay: 0.2s; }
+.fade-in-delay:nth-child(3) { animation-delay: 0.3s; }
+.fade-in-delay:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.infinite-scroll {
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .floating,
+    .dig-animation,
+    .hover-wiggle:hover,
+    .hover-glow:hover {
+        animation: none;
+    }
+}
+
+.interactive-cursor-shovel {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/titaniumshovel.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0;
+    mix-blend-mode: normal;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.cursor-digging {
+    animation: dig 0.5s ease-in-out;
+}
+
+.cursor-hover-text {
+    transform: scale(1.5);
+    background: var(--accent-color);
+}
+
+.cursor-hover-button {
+    transform: scale(2);
+    background: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.cursor-hover-image {
+    transform: scale(0.5);
+    opacity: 0.7;
+}
