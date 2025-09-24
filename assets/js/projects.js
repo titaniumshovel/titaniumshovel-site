@@ -433,17 +433,17 @@ class ProjectShowcase {
         this.privateProjects = [
             {
                 id: 1,
-                title: "10YearAnniversarySite",
-                description: "Comprehensive interactive website celebrating a 10-year marriage anniversary with advanced photo management, timeline milestones, and powerful search capabilities. Features 650+ optimized photos, smart filtering, and mobile-optimized navigation.",
-                category: "web",
-                technologies: ["JavaScript", "Canvas API", "Photo Management", "Timeline UI", "Mobile Optimization"],
+                title: "ToothPaste",
+                description: "Universal cross-platform collaboration platform that makes files, clipboard, mouse, and keyboard flow between devices seamlessly. Zero-configuration with automatic discovery, local-first architecture, and enterprise features.",
+                category: "tools",
+                technologies: ["Python", "WebRTC", "Bluetooth", "P2P Networking", "Enterprise Security"],
                 features: [
-                    "650+ Photos with lazy loading & Canvas thumbnails",
-                    "Advanced Search by date, location, caption, filename",
-                    "Interactive Timeline with chronological life events",
-                    "Smart filters for holidays, seasons, and date ranges",
-                    "Full-size slideshow with keyboard navigation",
-                    "Mobile-optimized touch controls"
+                    "Software KVM - mouse/keyboard flow between devices",
+                    "Universal clipboard with format preservation",
+                    "Cross-machine drag & drop functionality",
+                    "Automatic device discovery via BLE/mDNS",
+                    "Enterprise authentication & policy engine",
+                    "End-to-end encryption with forward secrecy"
                 ],
                 isPrivate: true
             },
@@ -465,17 +465,17 @@ class ProjectShowcase {
             },
             {
                 id: 3,
-                title: "ToothPaste",
-                description: "Universal cross-platform collaboration platform that makes files, clipboard, mouse, and keyboard flow between devices seamlessly. Zero-configuration with automatic discovery, local-first architecture, and enterprise features.",
-                category: "tools",
-                technologies: ["Python", "WebRTC", "Bluetooth", "P2P Networking", "Enterprise Security"],
+                title: "10YearAnniversarySite",
+                description: "Comprehensive interactive website celebrating a 10-year marriage anniversary with advanced photo management, timeline milestones, and powerful search capabilities. Features 650+ optimized photos, smart filtering, and mobile-optimized navigation.",
+                category: "web",
+                technologies: ["JavaScript", "Canvas API", "Photo Management", "Timeline UI", "Mobile Optimization"],
                 features: [
-                    "Software KVM - mouse/keyboard flow between devices",
-                    "Universal clipboard with format preservation",
-                    "Cross-machine drag & drop functionality",
-                    "Automatic device discovery via BLE/mDNS",
-                    "Enterprise authentication & policy engine",
-                    "End-to-end encryption with forward secrecy"
+                    "650+ Photos with lazy loading & Canvas thumbnails",
+                    "Advanced Search by date, location, caption, filename",
+                    "Interactive Timeline with chronological life events",
+                    "Smart filters for holidays, seasons, and date ranges",
+                    "Full-size slideshow with keyboard navigation",
+                    "Mobile-optimized touch controls"
                 ],
                 isPrivate: true
             }
