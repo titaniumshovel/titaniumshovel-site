@@ -19,86 +19,114 @@ class ProjectShowcase {
         this.projects = [
             {
                 id: 1,
-                title: "E-Commerce Platform",
-                description: "Full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard. Built with modern web technologies for scalability and performance.",
-                category: "web",
-                technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redis"],
+                title: "Obsidian Scribe",
+                description: "Advanced audio transcription plugin for Obsidian with speaker diarization and smart chunking. Automatically converts recordings into structured Markdown notes with multi-speaker identification and large file handling capabilities.",
+                category: "tools",
+                technologies: ["Python", "OpenAI Whisper", "Hugging Face", "YAML", "Obsidian API"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/obsidian-scribe#demo",
+                    github: "https://github.com/titaniumshovel/obsidian-scribe"
                 },
                 featured: true,
                 status: "completed"
             },
             {
                 id: 2,
-                title: "Task Management App",
-                description: "Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking capabilities.",
+                title: "LegalEyes Browser Extension",
+                description: "AI-powered browser extension that summarizes Terms & Conditions and privacy policies using Google's Gemini AI. Highlights concerning clauses by severity and category for informed decision-making.",
                 category: "web",
-                technologies: ["Vue.js", "Firebase", "PWA", "WebRTC"],
+                technologies: ["JavaScript", "Google Gemini AI", "Browser APIs", "Chrome Extensions"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/LegalEyes#usage",
+                    github: "https://github.com/titaniumshovel/LegalEyes"
                 },
                 featured: true,
                 status: "completed"
             },
             {
                 id: 3,
-                title: "Mobile Weather App",
-                description: "Cross-platform mobile weather application with location-based forecasts, interactive maps, and personalized weather alerts.",
-                category: "mobile",
-                technologies: ["React Native", "OpenWeather API", "Maps", "Push Notifications"],
+                title: "Vision One MCP Server",
+                description: "Model Context Protocol server enabling natural language interaction with Trend Vision One security APIs. Leverages LLMs for intelligent security event analysis and response automation.",
+                category: "ai",
+                technologies: ["Python", "MCP Protocol", "Trend Vision One API", "LLM Integration"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/vision-one-mcp-server#examples",
+                    github: "https://github.com/titaniumshovel/vision-one-mcp-server"
                 },
-                featured: false,
+                featured: true,
                 status: "completed"
             },
             {
                 id: 4,
-                title: "Code Deployment Tool",
-                description: "Automated deployment pipeline tool that streamlines the development workflow with CI/CD integration and monitoring capabilities.",
+                title: "Whisper Obsidian Plugin",
+                description: "Speech-to-text plugin for Obsidian that integrates OpenAI's Whisper API for real-time audio transcription directly within your knowledge management workflow.",
                 category: "tools",
-                technologies: ["Python", "Docker", "AWS", "Jenkins", "Bash"],
+                technologies: ["TypeScript", "Obsidian API", "OpenAI Whisper", "Audio Processing"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/whisper-obsidian-plugin#features",
+                    github: "https://github.com/titaniumshovel/whisper-obsidian-plugin"
                 },
-                featured: true,
+                featured: false,
                 status: "completed"
             },
             {
                 id: 5,
-                title: "AI Content Generator",
-                description: "Machine learning-powered content generation tool that creates blog posts, social media content, and marketing copy using natural language processing.",
-                category: "ai",
-                technologies: ["Python", "TensorFlow", "OpenAI API", "Flask", "React"],
+                title: "Media Transcriber",
+                description: "Python-based media transcription toolkit for batch processing audio and video files. Supports multiple formats and provides automated transcription workflows for content creators.",
+                category: "tools",
+                technologies: ["Python", "FFmpeg", "Audio Processing", "Batch Processing"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/media-transcriber#usage",
+                    github: "https://github.com/titaniumshovel/media-transcriber"
                 },
-                featured: true,
-                status: "in-development"
+                featured: false,
+                status: "completed"
             },
             {
                 id: 6,
-                title: "Data Visualization Dashboard",
-                description: "Interactive dashboard for data visualization and analytics with real-time charts, custom filters, and export capabilities for business intelligence.",
-                category: "web",
-                technologies: ["D3.js", "React", "Express", "PostgreSQL", "Chart.js"],
+                title: "MarkdownToPDF Converter",
+                description: "JavaScript tool for converting Markdown documents to professional PDF format with customizable styling, table of contents generation, and batch processing capabilities.",
+                category: "tools",
+                technologies: ["JavaScript", "Markdown", "PDF Generation", "Node.js"],
                 image: null,
                 links: {
-                    demo: "#",
-                    github: "#"
+                    demo: "https://github.com/titaniumshovel/MarkdownToPDF#examples",
+                    github: "https://github.com/titaniumshovel/MarkdownToPDF"
                 },
                 featured: false,
+                status: "completed"
+            },
+            {
+                id: 7,
+                title: "V1 Credit Breakdown",
+                description: "Python analytics tool for analyzing Trend Vision One credit usage patterns. Provides detailed insights into API consumption, cost optimization recommendations, and usage forecasting.",
+                category: "tools",
+                technologies: ["Python", "Data Analytics", "API Integration", "Visualization"],
+                image: null,
+                links: {
+                    demo: "https://github.com/titaniumshovel/V1CreditBreakdown#analysis",
+                    github: "https://github.com/titaniumshovel/V1CreditBreakdown"
+                },
+                featured: false,
+                status: "completed"
+            },
+            {
+                id: 8,
+                title: "TitaniumShovel Portfolio",
+                description: "This very website! A modern, interactive developer portfolio featuring custom titanium shovel branding, scroll-triggered animations, and responsive design. Built with pure HTML, CSS, and JavaScript.",
+                category: "web",
+                technologies: ["JavaScript", "CSS3", "HTML5", "Animations", "GitHub Pages"],
+                image: null,
+                links: {
+                    demo: "https://titaniumshovel.com",
+                    github: "https://github.com/titaniumshovel/titaniumshovel-site"
+                },
+                featured: true,
                 status: "completed"
             }
         ];
