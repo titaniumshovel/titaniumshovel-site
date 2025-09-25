@@ -21,11 +21,10 @@ class ProjectShowcase {
                 id: 1,
                 title: "Obsidian Scribe",
                 description: "Advanced audio transcription plugin for Obsidian with speaker diarization and smart chunking. Automatically converts recordings into structured Markdown notes with multi-speaker identification and large file handling capabilities.",
-                category: "tools",
+                category: "ai",
                 technologies: ["Python", "OpenAI Whisper", "Hugging Face", "YAML", "Obsidian API"],
-                image: null,
+                image: "assets/images/projects/obsidian.png",
                 links: {
-                    demo: "https://github.com/titaniumshovel/obsidian-scribe#demo",
                     github: "https://github.com/titaniumshovel/obsidian-scribe"
                 },
                 featured: true,
@@ -35,11 +34,10 @@ class ProjectShowcase {
                 id: 2,
                 title: "LegalEyes Browser Extension",
                 description: "AI-powered browser extension that summarizes Terms & Conditions and privacy policies using Google's Gemini AI. Highlights concerning clauses by severity and category for informed decision-making.",
-                category: "web",
+                category: "ai",
                 technologies: ["JavaScript", "Google Gemini AI", "Browser APIs", "Chrome Extensions"],
-                image: null,
+                image: "assets/images/projects/legaleyes.png",
                 links: {
-                    demo: "https://github.com/titaniumshovel/LegalEyes#usage",
                     github: "https://github.com/titaniumshovel/LegalEyes"
                 },
                 featured: true,
@@ -47,56 +45,53 @@ class ProjectShowcase {
             },
             {
                 id: 3,
-                title: "Whisper Obsidian Plugin",
-                description: "Speech-to-text plugin for Obsidian that integrates OpenAI's Whisper API for real-time audio transcription directly within your knowledge management workflow.",
-                category: "tools",
-                technologies: ["TypeScript", "Obsidian API", "OpenAI Whisper", "Audio Processing"],
-                image: null,
-                links: {
-                    demo: "https://github.com/titaniumshovel/whisper-obsidian-plugin#features",
-                    github: "https://github.com/titaniumshovel/whisper-obsidian-plugin"
-                },
-                featured: false,
-                status: "completed"
-            },
-            {
-                id: 4,
                 title: "Media Transcriber",
                 description: "Python-based media transcription toolkit for batch processing audio and video files. Supports multiple formats and provides automated transcription workflows for content creators.",
-                category: "tools",
+                category: "ai",
                 technologies: ["Python", "FFmpeg", "Audio Processing", "Batch Processing"],
-                image: null,
+                image: "assets/images/projects/media.png",
                 links: {
-                    demo: "https://github.com/titaniumshovel/media-transcriber#usage",
                     github: "https://github.com/titaniumshovel/media-transcriber"
                 },
                 featured: false,
                 status: "completed"
             },
             {
-                id: 5,
+                id: 4,
                 title: "MarkdownToPDF Converter",
                 description: "JavaScript tool for converting Markdown documents to professional PDF format with customizable styling, table of contents generation, and batch processing capabilities.",
                 category: "tools",
                 technologies: ["JavaScript", "Markdown", "PDF Generation", "Node.js"],
-                image: null,
+                image: "assets/images/projects/markdowntopdf.png",
                 links: {
-                    demo: "https://github.com/titaniumshovel/MarkdownToPDF#examples",
+                    demo: "https://titaniumshovel.github.io/MarkdownToPDF/",
                     github: "https://github.com/titaniumshovel/MarkdownToPDF"
                 },
                 featured: false,
                 status: "completed"
             },
             {
-                id: 6,
+                id: 5,
                 title: "V1 Credit Breakdown",
                 description: "Python analytics tool for analyzing Trend Vision One credit usage patterns. Provides detailed insights into API consumption, cost optimization recommendations, and usage forecasting.",
-                category: "tools",
+                category: "security",
                 technologies: ["Python", "Data Analytics", "API Integration", "Visualization"],
-                image: null,
+                image: "assets/images/projects/credits.png",
                 links: {
-                    demo: "https://github.com/titaniumshovel/V1CreditBreakdown#analysis",
                     github: "https://github.com/titaniumshovel/V1CreditBreakdown"
+                },
+                featured: false,
+                status: "completed"
+            },
+            {
+                id: 6,
+                title: "Whisper Obsidian Plugin (Fork)",
+                description: "Forked speech-to-text plugin for Obsidian with bug fixes and feature enhancements. Fixed compatibility issues and added improved error handling for OpenAI's Whisper API integration in knowledge management workflows.",
+                category: "tools",
+                technologies: ["TypeScript", "Obsidian API", "OpenAI Whisper", "Audio Processing"],
+                image: "assets/images/projects/whisper.png",
+                links: {
+                    github: "https://github.com/titaniumshovel/whisper-obsidian-plugin"
                 },
                 featured: false,
                 status: "completed"
@@ -203,7 +198,7 @@ class ProjectShowcase {
             ${featuredBadge}
             <div class="project-image">
                 ${project.image
-                    ? `<img src="${project.image}" alt="${project.title}" loading="lazy">`
+                    ? `<img src="${project.image}" alt="${project.title}" loading="lazy" class="project-logo">`
                     : `<div class="project-placeholder">
                         <div class="placeholder-icon">🚀</div>
                         <div class="placeholder-text">${project.title}</div>
@@ -211,9 +206,11 @@ class ProjectShowcase {
                 }
                 <div class="project-overlay">
                     <div class="project-actions">
-                        <a href="${project.links.demo}" class="project-action" target="_blank" rel="noopener noreferrer">
-                            <span>👁️</span> View Demo
-                        </a>
+                        ${project.links.demo ? `
+                            <a href="${project.links.demo}" class="project-action" target="_blank" rel="noopener noreferrer">
+                                <span>👁️</span> View Demo
+                            </a>
+                        ` : ''}
                         <a href="${project.links.github}" class="project-action" target="_blank" rel="noopener noreferrer">
                             <span>⚡</span> View Code
                         </a>
@@ -229,9 +226,11 @@ class ProjectShowcase {
                     ).join('')}
                 </div>
                 <div class="project-links">
-                    <a href="${project.links.demo}" class="project-link" target="_blank" rel="noopener noreferrer">
-                        Live Demo
-                    </a>
+                    ${project.links.demo ? `
+                        <a href="${project.links.demo}" class="project-link" target="_blank" rel="noopener noreferrer">
+                            Live Demo
+                        </a>
+                    ` : ''}
                     <a href="${project.links.github}" class="project-link" target="_blank" rel="noopener noreferrer">
                         GitHub
                     </a>
@@ -340,9 +339,11 @@ class ProjectShowcase {
                             </div>
                         </div>
                         <div class="project-actions-modal">
-                            <a href="${project.links.demo}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-                                View Live Demo
-                            </a>
+                            ${project.links.demo ? `
+                                <a href="${project.links.demo}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                                    View Live Demo
+                                </a>
+                            ` : ''}
                             <a href="${project.links.github}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
                                 View Source Code
                             </a>
@@ -437,6 +438,7 @@ class ProjectShowcase {
                 description: "Universal cross-platform collaboration platform that makes files, clipboard, mouse, and keyboard flow between devices seamlessly. Zero-configuration with automatic discovery, local-first architecture, and enterprise features.",
                 category: "tools",
                 technologies: ["Python", "WebRTC", "Bluetooth", "P2P Networking", "Enterprise Security"],
+                image: "assets/images/projects/toothpaste_icon.png",
                 features: [
                     "Software KVM - mouse/keyboard flow between devices",
                     "Universal clipboard with format preservation",
@@ -453,6 +455,7 @@ class ProjectShowcase {
                 description: "Self-hosted replacement for KeepTheScore.com - real-time scoreboards perfect for livestreaming and game management. Complete with user authentication, collaboration features, and professional OBS integration.",
                 category: "web",
                 technologies: ["Node.js", "JWT Auth", "WebSocket", "Real-time Sync", "OBS Integration"],
+                image: "assets/images/projects/scorekeeper.png",
                 features: [
                     "JWT-based authentication & user management",
                     "Real-time score synchronization across devices",
@@ -469,6 +472,7 @@ class ProjectShowcase {
                 description: "Comprehensive interactive website celebrating a 10-year marriage anniversary with advanced photo management, timeline milestones, and powerful search capabilities. Features 650+ optimized photos, smart filtering, and mobile-optimized navigation.",
                 category: "web",
                 technologies: ["JavaScript", "Canvas API", "Photo Management", "Timeline UI", "Mobile Optimization"],
+                image: "assets/images/projects/10.png",
                 features: [
                     "650+ Photos with lazy loading & Canvas thumbnails",
                     "Advanced Search by date, location, caption, filename",
@@ -477,6 +481,9 @@ class ProjectShowcase {
                     "Full-size slideshow with keyboard navigation",
                     "Mobile-optimized touch controls"
                 ],
+                links: {
+                    demo: "https://chrisandelizabeth.netlify.app/"
+                },
                 isPrivate: true
             }
         ];
@@ -533,6 +540,11 @@ class ProjectShowcase {
                     </ul>
                 </div>
                 <div class="private-actions">
+                    ${project.links && project.links.demo ? `
+                        <a href="${project.links.demo}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            🌐 View Live Demo
+                        </a>
+                    ` : ''}
                     <button class="btn btn-private" onclick="projectShowcase.requestCollaboratorAccess('${project.title}')">
                         <span class="request-icon">🤝</span>
                         Request Collaborator Access
@@ -564,7 +576,7 @@ class ProjectShowcase {
                             <p>This is a private repository. To request collaborator access, please reach out through one of the contact methods below:</p>
                         </div>
                         <div class="contact-options">
-                            <a href="mailto:chris@titaniumshovel.com?subject=Collaborator Request: ${projectTitle}&body=Hi Chris,%0A%0AI'm interested in collaborating on ${projectTitle}. Here's a bit about my background:%0A%0A[Please tell me about yourself and why you're interested in this project]%0A%0AThanks!" class="contact-option">
+                            <a href="mailto:titaniumshovel@gmail.com?subject=Collaborator Request: ${projectTitle}&body=Hi Chris,%0A%0AI'm interested in collaborating on ${projectTitle}. Here's a bit about my background:%0A%0A[Please tell me about yourself and why you're interested in this project]%0A%0AThanks!" class="contact-option">
                                 <span class="contact-icon">📧</span>
                                 <div class="contact-details">
                                     <strong>Email Request</strong>
@@ -576,13 +588,6 @@ class ProjectShowcase {
                                 <div class="contact-details">
                                     <strong>LinkedIn Message</strong>
                                     <small>Connect and send a message</small>
-                                </div>
-                            </a>
-                            <a href="https://github.com/titaniumshovel" target="_blank" class="contact-option">
-                                <span class="contact-icon">⚡</span>
-                                <div class="contact-details">
-                                    <strong>GitHub Discussion</strong>
-                                    <small>Open an issue or discussion</small>
                                 </div>
                             </a>
                         </div>

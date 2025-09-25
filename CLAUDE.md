@@ -9,6 +9,7 @@ A comprehensive professional portfolio website for Christopher Mackle, Senior Cy
 ### **Technology Stack**
 - **Frontend**: Pure HTML5, CSS3, JavaScript (ES6+)
 - **Styling**: Custom CSS with CSS Grid, Flexbox, and animations
+- **Email Hosting**: Zoho Mail (free tier) with custom domain
 - **Deployment**: GitHub Pages
 - **Version Control**: Git with GitHub integration
 
@@ -22,7 +23,8 @@ A comprehensive professional portfolio website for Christopher Mackle, Senior Cy
 
 ```
 titaniumshovel/
-├── index.html                          # Main HTML structure
+├── index.html                          # Main HTML structure with Education section
+├── EMAIL_SETUP.md                     # Email hosting setup guide
 ├── assets/
 │   ├── css/
 │   │   ├── style.css                   # Core styles and layout
@@ -65,6 +67,7 @@ titaniumshovel/
 ### **Professional Presentation**
 - **About Section**: LinkedIn bio integration with professional headshot
 - **Experience Timeline**: Career progression with visual hierarchy
+- **Education Section**: Academic credentials with honors and achievements
 - **Skills Matrix**: Categorized expertise aligned with LinkedIn profile
 - **Resume Download**: Direct PDF access for professional networking
 
@@ -75,10 +78,12 @@ titaniumshovel/
 - **GitHub Integration**: Direct links to repositories and live demos
 
 ### **Interactive Elements**
-- **Custom Cursor Effects**: Titanium shovel transforms based on hover targets
+- **Custom Cursor Effects**: Titanium shovel transforms based on hover targets (visible above modals)
 - **Scroll Animations**: Progressive reveal with performance optimization
-- **Filter System**: Dynamic project categorization
+- **Filter System**: Dynamic project categorization (AI/ML, Security, Tools & Utilities, Web Development)
 - **Contact Modal**: Professional collaboration request workflow
+- **Project Modals**: Detailed project information with conditional demo links
+- **Private Project Collaboration**: Request access system with email and LinkedIn integration
 
 ### **Technical Excellence**
 - **Performance**: Lighthouse score 95+ across all metrics
@@ -133,7 +138,7 @@ titaniumshovel/
 - **Private Repository Showcase**: Builds interest without revealing code
 - **Collaboration Requests**: Professional contact workflow
 - **Pre-filled Templates**: Easy outreach for potential collaborators
-- **Multiple Contact Channels**: Email, LinkedIn, GitHub integration
+- **Multiple Contact Channels**: Email (titaniunshovel@gmail.com), LinkedIn integration (GitHub discussion removed)
 
 ## 🔄 Development Workflow
 
@@ -154,7 +159,7 @@ titaniumshovel/
 ### **Planned Features**
 - **Blog Integration**: Technical writing and thought leadership
 - **Project Gallery**: Enhanced visual showcase with screenshots
-- **Contact Form Backend**: Server integration for form submissions
+- **Contact Form Backend**: Server integration for form submissions (integrate with custom email)
 - **Analytics Dashboard**: Privacy-focused visitor insights
 
 ### **Technical Improvements**
@@ -182,11 +187,13 @@ titaniumshovel/
 ### **Monitoring**
 - **Performance**: Regular Lighthouse audits
 - **Uptime**: GitHub Pages reliability monitoring
+- **Email Delivery**: Monthly email system testing
 - **User Feedback**: Contact form and collaboration requests
 - **Security**: Dependency updates and vulnerability scanning
 
 ### **Update Process**
 - **Content Updates**: Professional experience, skills, projects
+- **Email Management**: Monitor Zoho Mail storage usage and deliverability
 - **Feature Releases**: New sections, enhanced functionality
 - **Security Patches**: Regular dependency and framework updates
 - **Performance Optimization**: Ongoing improvements based on metrics
@@ -195,6 +202,18 @@ titaniumshovel/
 
 ## 💡 Development Notes
 
+### **Recent Updates (Latest Session)**
+- **Education Section**: Added comprehensive education section with BS Computer Science from Wentworth Institute of Technology
+- **Email Migration**: Updated all contact references from chris@titaniumshovel.com to titaniunshovel@gmail.com
+- **Project Organization**: Moved Whisper Obsidian Plugin to last position, marked as forked repository
+- **Demo Link Management**: Removed demo links from most public repos, kept only MarkdownToPDF (GitHub Pages)
+- **Private Project Enhancement**: Added live demo link for 10YearAnniversarySite (Netlify)
+- **Collaboration System**: Removed GitHub discussion links, streamlined to email + LinkedIn only
+- **Project Categorization**: Reorganized projects by category (AI/ML, Security, Tools) for better filtering
+- **Modal System**: Added complete CSS styling for collaboration modals (was missing)
+- **Mobile Optimization**: Enhanced mobile responsiveness for all new features
+- **Scroll Indicator**: Fixed mobile centering for "scroll to dig deeper" text
+
 ### **Key Decisions**
 - **Pure JavaScript**: No frameworks for maximum performance and control
 - **Modular CSS**: Separate files for maintainability
@@ -202,10 +221,14 @@ titaniumshovel/
 - **Professional Focus**: Balances creativity with enterprise credibility
 
 ### **Technical Challenges Solved**
-- **Custom Cursor**: Cross-browser compatibility with performance optimization
+- **Custom Cursor**: Cross-browser compatibility with performance optimization (z-index above modals)
 - **Timeline Animation**: Staggered reveals with intersection observer
 - **Responsive Images**: Multiple formats with appropriate sizing
 - **Cache Management**: Aggressive busting while maintaining performance
+- **Modal Z-Index Management**: Proper layering for cursor visibility and modal interactions
+- **Mobile Touch Targets**: WCAG 2.1 AA compliance with 44px minimum touch targets
+- **Text Overflow Handling**: Long email addresses break properly on mobile devices
+- **Conditional Rendering**: Demo links show/hide based on project availability
 
 ### **Code Quality Standards**
 - **Semantic HTML**: Proper structure for accessibility and SEO
@@ -213,8 +236,34 @@ titaniumshovel/
 - **JavaScript Patterns**: Modular design with clear separation of concerns
 - **Documentation**: Comprehensive comments and external documentation
 
+## 📧 Email Infrastructure
+
+### **Custom Email Setup**
+- **Domain**: titaniumshovel.com
+- **Provider**: Zoho Mail (free tier)
+- **Primary Email**: titaniunshovel@gmail.com (updated from chris@titaniumshovel.com)
+- **Cost**: $0/month (5 users, 5GB each)
+
+### **Email Integration**
+- **Contact Forms**: Direct integration with Gmail (titaniunshovel@gmail.com)
+- **Collaboration Requests**: Pre-filled email templates for private repository access (email + LinkedIn only)
+- **Professional Communication**: Consistent messaging across all contact points
+- **Mobile Access**: Gmail mobile app with instant notifications
+
+### **Setup Documentation**
+- **Implementation Guide**: See EMAIL_SETUP.md for complete setup instructions
+- **DNS Configuration**: MX, SPF, and DKIM records properly configured
+- **Security Features**: 2FA enabled, secure authentication protocols
+- **Backup Strategy**: Email forwarding to existing addresses during transition
+
+### **Future Email Enhancements**
+- **Contact Form Backend**: Server-side processing to send emails directly
+- **Email Templates**: Automated responses for collaboration requests
+- **Newsletter Integration**: Professional updates and project announcements
+- **Analytics**: Email engagement tracking (privacy-focused)
+
 ---
 
 **Built with precision, passion, and a titanium shovel** ⚡
 
-*For questions, suggestions, or collaboration opportunities, reach out through the contact methods on the site.*
+*For questions, suggestions, or collaboration opportunities, reach out through titaniunshovel@gmail.com or the contact methods on the site.*

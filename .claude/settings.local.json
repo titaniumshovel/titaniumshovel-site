@@ -6,7 +6,8 @@
       "WebFetch(domain:github.com)",
       "Bash(git add -A)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Read(//mnt/c/Users/christopherm/OneDrive/**)"
     ],
     "deny": [],
     "ask": []
