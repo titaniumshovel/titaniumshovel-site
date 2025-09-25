@@ -34,7 +34,7 @@ class ProjectShowcase {
                 id: 2,
                 title: "LegalEyes Browser Extension",
                 description: "AI-powered browser extension that summarizes Terms & Conditions and privacy policies using Google's Gemini AI. Highlights concerning clauses by severity and category for informed decision-making.",
-                category: "ai",
+                category: "legal",
                 technologies: ["JavaScript", "Google Gemini AI", "Browser APIs", "Chrome Extensions"],
                 image: "assets/images/projects/legaleyes.png",
                 links: {
@@ -522,6 +522,11 @@ class ProjectShowcase {
         card.innerHTML = `
             <div class="private-card-header">
                 <div class="private-badge">🔒 Private Repository</div>
+                ${project.image ? `
+                    <div class="private-project-image">
+                        <img src="${project.image}" alt="${project.title}" loading="lazy">
+                    </div>
+                ` : ''}
                 <h4 class="private-project-title">${project.title}</h4>
             </div>
             <div class="private-project-content">
