@@ -252,12 +252,14 @@
 
     .hero-section {
         padding: 4rem 1rem 2rem;
+        min-height: auto;
     }
 
     .hero-actions {
         flex-direction: column;
         align-items: center;
         width: 100%;
+        margin-bottom: 3rem;
     }
 
     .btn {
@@ -265,6 +267,14 @@
         max-width: 280px;
         text-align: center;
         padding: 0.875rem 1.5rem;
+    }
+
+    .scroll-indicator {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        margin-top: 2rem;
     }
 
     .hero-shovel {
